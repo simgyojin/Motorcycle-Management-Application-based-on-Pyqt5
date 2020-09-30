@@ -18,9 +18,7 @@ class Send_message:
         ip = IPv4Address(ipAddress)
  
         session = AirmoreSession(ip, int(port))
-        service = MessagingService(session)
-        
- 
+        service = MessagingService(session) 
         now_date = datetime.date.today()
         #보낼 문자내용
         if info == '직원등록':
@@ -37,9 +35,7 @@ class Send_message:
     def send_insurance(self, ip_addr, cellPhone, name, message):
         ipAddress = ip_addr
         ip = IPv4Address(ipAddress)
- 
         session = AirmoreSession(ip, 2333)
         service = MessagingService(session)
-        
         sendMessage = "{}님 안녕하세요. {}".format(name, message)
         service.send_message(cellPhone, sendMessage)              
