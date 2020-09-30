@@ -1,10 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu Jul 30 10:42:12 2020
-
-@author: SAMSUNG
-"""
-
 import pyairmore
 from ipaddress import IPv4Address # for your IP address
 from pyairmore.request import AirmoreSession # to create an AirmoreSession
