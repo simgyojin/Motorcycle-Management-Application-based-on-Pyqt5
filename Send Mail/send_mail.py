@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Jul 20 13:53:00 2020
-
-@author: SAMSUNG
-"""
 
 import os
 import smtplib
