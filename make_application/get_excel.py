@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 21 01:15:21 2020
-
-@author: SAMSUNG
-"""
 
 import pandas as pd
 from openpyxl import Workbook
@@ -14,7 +9,7 @@ from save_database import *
 class get_excel:
     def get_acci_excel(self, save_path, accident):
         udata = upload_db()
-        work_file = openpyxl.load_workbook(os.path.join(os.path.abspath("."), '한강바이크 사고처리 내역서.xlsx'))
+        work_file = openpyxl.load_workbook(os.path.join(os.path.abspath("."), '사고처리 내역서.xlsx'))
         wsfile = work_file.get_sheet_by_name('사고처리내역서')
         xl_query = 'select * from accident_partner where insur_recept_no="{}";'.format(accident)
         xl_col = ['insur_recept_no', 'insur_com', 'insur_charge_name', 'charge_call', 'charge_mail', 'reception_detail', 'messege_setting', 'accident_date', 
