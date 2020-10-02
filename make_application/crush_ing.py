@@ -1,17 +1,11 @@
 # -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'C:\Users\SAMSUNG\Desktop\program\z_ui\crush_ing.ui'
-#
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import *
+
 from insurance_call import *
 from real_send_mail import *
 from get_excel import *
-from PyQt5.QtWidgets import *
 from save_database import *
 from save_firebase import *
 import pymysql
