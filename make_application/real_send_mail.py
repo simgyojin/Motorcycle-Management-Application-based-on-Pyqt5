@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\SAMSUNG\Desktop\program\z_ui\real_send_mail.ui'
-#
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QFileDialog
@@ -32,14 +27,14 @@ class real_send_mail_Ui_Form(object):
         acci_col = ['insur_com', 'charge_mail', 'vehicle_number', 'admin_no', 'branch_no']
         acci_df = self.udata.make_dataframe(acci_query,acci_col)
         for idx in range(len(acci_df)):
-            try:        #바이크뱅크 리스
+            try:        #본사 리스
                 bb_qq = ''''select branch_name from bikebank_branch where admin_no={};'''.format(acci_df['admin_no'][0])
                 bb_col = ['branch_name']
                 bb_df = self.udata.make_dataframe(bb_qq,bb_col)
                 admin_name = bb_df['branch_name'][0]
             except:
-                admin_name='한강바이크'
-        from_email = 'hangang_ansan@naver.com'
+                admin_name='바이크'
+        from_email = '@naver.com'
         to_email = acci_df['charge_mail'][0]
         to_name = acci_df['insur_com'][0]
         mail_title = '{}-{}'.format(accident,acci_df['vehicle_number'][0])
@@ -177,7 +172,7 @@ class real_send_mail_Ui_Form(object):
         self.pushButton_8.setObjectName("pushButton_8")
         ###
         Dialog=QtWidgets.QDialog()
-        self.pushButton_8.clicked.connect(lambda: self.send_mail('hangang_ansan','hangangbike',Dialog,accident))
+        self.pushButton_8.clicked.connect(lambda: self.send_mail('ID','PASS',Dialog,accident))
         ###
         self.textBrowser = QtWidgets.QTextBrowser(Form)
         self.textBrowser.setGeometry(QtCore.QRect(20, 70, 251, 41))
@@ -285,7 +280,7 @@ class real_send_mail_Ui_Form(object):
                 session.sendmail(from_addr, to_addr, message.as_string())
                 session.sendmail(from_addr, from_addr, message_2.as_string())
                     
-                cpnn = pymysql.connect(host='112.170.233.23', port=3306, user='gyojin', passwd='endeoddl2', db='hangang_backup')
+                cpnn = pymysql.connect(host='', port=3306, user='', passwd='', db='')
                 curs = cpnn.cursor()
                 curs.execute('update accident_partner set estimate_date="{0}", doc_date="{0}" where insur_recept_no="{1}";'.format(QDate.currentDate().toString('yyyyMMdd'), accident))
                 cpnn.commit()
