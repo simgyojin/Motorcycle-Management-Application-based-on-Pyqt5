@@ -2,7 +2,7 @@
 block_cipher = None
 
 
-a = Analysis(['a_real_login.py'],
+a = Analysis(['real_login.py'],
              pathex=['C:\\Users\\SAMSUNG\\Desktop\\program'],
              binaries=[],
              datas=[('.\\geckodriver.exe','.'),
