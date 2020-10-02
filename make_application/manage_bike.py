@@ -1,10 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'C:\Users\SAMSUNG\Desktop\알바\바이크뱅크\program\manage_bike_whghl.ui'
-#
-# Created by: PyQt5 UI code generator 5.9.2
-#
-# WARNING! All changes made in this file will be lost!
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
